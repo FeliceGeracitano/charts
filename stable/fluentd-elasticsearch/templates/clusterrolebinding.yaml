@@ -14,7 +14,7 @@ subjects:
 - kind: ServiceAccount
   name: {{ template "fluentd-elasticsearch.fullname" . }}
   apiGroup: ""
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ .Values.namespace }}
 roleRef:
   kind: ClusterRole
   name: {{ template "fluentd-elasticsearch.fullname" . }}
