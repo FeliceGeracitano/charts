@@ -61,6 +61,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}:{{ .Values.imageTag }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
+          command: ["bash", "-c", "unset SCHEMA_REGISTRY_PORT; /etc/confluent/docker/run"]
           ports:
             - containerPort: {{ .Values.servicePort }}
             {{- if .Values.external.enabled }}
