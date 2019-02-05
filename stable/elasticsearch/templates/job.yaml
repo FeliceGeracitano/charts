@@ -1,4 +1,3 @@
-{{- if .Values.cluster.bootstrapShellCommand }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -29,4 +28,3 @@ spec:
         - {{ .Values.cluster.bootstrapShellCommand | quote }}
       restartPolicy: Never
   backoffLimit: 20
-{{- end }}
